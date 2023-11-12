@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-import { Card, CardContent, Typography, Chip, Box } from "@material-ui/core";
+import { Card, CardContent, Typography, Chip } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import { useEntity } from "@backstage/plugin-catalog-react";
 import { alertApiRef, useApi } from "@backstage/core-plugin-api";
@@ -93,7 +93,7 @@ export const OpaMetadataAnalysisCard = () => {
   return (
     <Card className={classes.card}>
       <CardContent>
-        <Box className={classes.titleBox}>
+        <Card className={classes.titleBox}>
           <Typography variant="h6">OPA Metadata Analysis</Typography>
           {opaResults?.violation && (
             <Chip
@@ -112,7 +112,7 @@ export const OpaMetadataAnalysisCard = () => {
               className={classes.chip}
             />
           )}
-        </Box>
+        </Card>
         {renderCardContent()}
       </CardContent>
     </Card>
